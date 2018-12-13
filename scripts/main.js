@@ -1,1 +1,3 @@
-console.log('main.js ran');
+const mainRender = (function() {
+    console.log('mainRender ran');
+});

@@ -28,7 +28,7 @@ body {
 }
 
 .container {
-
+    display: flex;
 }
 
 .bookmark {

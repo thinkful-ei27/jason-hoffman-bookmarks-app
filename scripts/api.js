@@ -1,1 +1,3 @@
-console.log('api.js ran');
+const getAPI = (function() {
+    console.log('getAPI ran');
+});

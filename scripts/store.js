@@ -13,4 +13,3 @@ const store = {
     isAdding: false,
 
 };
-console.log(`this is what's in the store: ${store.items}`);
