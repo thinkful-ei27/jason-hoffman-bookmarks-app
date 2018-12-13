@@ -3,6 +3,63 @@
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: rgb(247, 244, 240);
     color: black;
+}
+
+.page-title {
+    width: 100%;
+    text-justify: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-bar {
+    text-justify: center;
+    justify-content: center;
+    width: 50%;
+    box-sizing: content-box;
+    background-color: #edecec;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.container {
+
+}
+
+.bookmark {
+    width: 75%;
+    margin-top: 10px;
+    background-color: #edecec;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+ .bookmark-name, .description, {
+    display: flex;
+    width: 80%;
+}
+
+.bookmark-link, .rating {
+    display: flex;
+    width: 20%;
+}
+
+.bookmark-name, .description, .bookmark-link, .rating, button, a, select {
+    background-color: lightgrey;
+    border: 1px solid gray;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
