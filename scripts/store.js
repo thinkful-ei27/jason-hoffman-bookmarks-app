@@ -1,7 +1,8 @@
 console.log('store.js ran');
 
 const store = {
-    items: [ 
+    bookmarks: [ 
+        /*
         {
             id: 'id',
             title: 'name',
@@ -9,8 +10,21 @@ const store = {
             desc: 'blurb',
             rating: 'rating',
             isExpanded: false,
-        },
+        }
+        */
     ],
     isAdding: false,
 
+    findAndDelete: function(id) {
+        this.bookmarks = this.bookmarks.filter(item => item.id !== id);
+      },
+
+    addBookmark: function(bookmark) {
+        this.bookmarks.push(bookmark);
+    },
+
+    setIsAdding: function() {
+        console.log('setIsAdding ran');
+    },
 };
+

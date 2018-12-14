@@ -25,33 +25,24 @@
         </div>
 
         <div class="container">
-            <div class="bookmark" id="${this.id}">
-                <h2 class="bookmark-name">This is the bookmark name</h2>
-                <a class="bookmark-link" href="#">This is the link</a>
-                <p class="description">This is the description</p>
+            <div class="bookmark" id="">
+                <div class="bookmark-title">
+                    <h2 class="bookmark-name">This is the bookmark name</h2>
+                </div>
+                <a class="bookmark-link" href="${bookmark.url}">Link</a>
+                <div class="bookmark-description">
+                    <p>This is the bookmark description</p>
+                </div>
                 <p class="rating">five stars</p>
                 <button name="delete-link">delete</button>
             </div>
         </div>
-
-        <div class="container">
-                <div class="bookmark">
-                    <h2 class="bookmark-name">This is the bookmark name</h2>
-                    <p class="rating">five stars</p>
-                </div>
-            </div>
-
-        <div class="container">
-                <div class="bookmark">
-                    <h2 class="bookmark-name">This is the bookmark name</h2>
-                    <p class="rating">five stars</p>
-                </div>
-            </div>
     </main>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/scripts/api.js"></script>
     <script type="text/javascript" src="/scripts/store.js"></script>
+    <script type="text/javascript" src="/scripts/listMaker.js"></script>
     <script type="text/javascript" src="/scripts/main.js"></script>
     <script type="text/javascript" src="/scripts/index.js"></script>
 

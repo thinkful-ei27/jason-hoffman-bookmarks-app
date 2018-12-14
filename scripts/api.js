@@ -6,13 +6,17 @@ const api = (function(callback) {
 
     const getBookmarks = (function(callback) {
         console.log('getBookmarks ran');
-        const bookmarkList = $.getJSON(BASE_URL, (data) => {
-            console.log(data);
-        });
-        console.log('const bookmarkList= ' + bookmarkList);
-        return bookmarkList;
-        
+        $.getJSON(BASE_URL, (callback));
     });
+
+    const deleteItem = function(id, onSuccess, onError) {
+        $.ajax({
+          url: BASE_URL,
+          method: 'DELETE',
+          success: onSuccess,
+          error: onError,
+        });
+      };
 
     const createBookmarks = (function(linkObj, callback) {
         console.log('createBookmarks ran');
@@ -30,8 +34,6 @@ const api = (function(callback) {
     return {
         getBookmarks,
         createBookmarks,
+        deleteItem,
     };
-
-    
-
 }());

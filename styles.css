@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgb(247, 244, 240);
+    background-color: white;
     color: black;
 }
 
@@ -27,34 +27,51 @@ body {
     margin-bottom: 40px;
 }
 
+h1 {
+    text-justify: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .container {
-    display: flex;
+    
 }
 
 .bookmark {
-    width: 75%;
+    display: flex;
+    width: 100%;
+    min-width: 500px;
     margin-top: 10px;
     background-color: #edecec;
-    border: 2px solid gray;
+    border: 2px solid rgb(173, 170, 170);
     border-radius: 10px;
 }
- .bookmark-name, .description, {
-    display: flex;
-    width: 80%;
+ .bookmark-title {
+    display: inline-block;
+    align-content: center;
+    max-width: 70%;
+    min-width: 300px;
+}
+.bookmark-description {
+    display: inline-block;
+    align-content: center;
+    max-width: 70%;
+    min-width: 300px;
 }
 
 .bookmark-link, .rating {
-    display: flex;
-    width: 20%;
+    display: inline-block;
+    align-content: center;
+
 }
 
-.bookmark-name, .description, .bookmark-link, .rating, button, a, select {
+.bookmark-title, .bookmark-description, .bookmark-link, .rating, button, a, select {
     background-color: lightgrey;
     border: 1px solid gray;
     border-radius: 10px;
     text-decoration: none;
     color: black;
-    padding-left: 10px;
+    padding: 0px 10px;
     margin-left: 10px;
     margin-bottom: 10px;
 }
