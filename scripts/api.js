@@ -14,15 +14,9 @@ const api = (function(callback) {
         
     });
 
-    const createBookmarks = (function(linkTitle, callback) {
+    const createBookmarks = (function(linkObj, callback) {
         console.log('createBookmarks ran');
-        const newBookmark = JSON.stringify({
-            "desc": null,
-            "id": "cjpn2jd2t001j0kwn2k9milk3",
-            "rating": null,
-            "title": `"${linkTitle}"`,
-            "url": "http://www.bgirl.com"  
-        });
+        const newBookmark = JSON.stringify(linkObj);
 
         $.ajax({
             url: BASE_URL,

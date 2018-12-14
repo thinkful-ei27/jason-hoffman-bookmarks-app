@@ -4,9 +4,10 @@ const store = {
     items: [ 
         {
             id: 'id',
-            name: 'name',
-            blurb: 'blurb',
-            link: 'link',
+            title: 'name',
+            url: 'link',
+            desc: 'blurb',
+            rating: 'rating',
             isExpanded: false,
         },
     ],
