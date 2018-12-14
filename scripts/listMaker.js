@@ -19,28 +19,35 @@ const listMaker = (function(){
             </section>
         `;
     }
- 
-
-
-    // this creates and returns html for one bookmark
+    
     function generateBookmarkElement(bookmark) {
-        //const expandedClass = bookmark.isExpanded ? 'bookmark__expanded' : '';
-        //const editView = bookmark.isExpanded ? 'disabled' : '';
-
-        
-       return `
-        <div class="bookmark" id="${bookmark.id}">
-            <div class="bookmark-title">
-                <h2 class="bookmark-name">${bookmark.title}</h2>
+        if (this.isExpanded === true) {
+            // this creates and returns html for one expanded bookmark
+            return `
+            <div class="bookmark" id="${bookmark.id}">
+                <div class="bookmark-title">
+                    <h2 class="bookmark-name">${bookmark.title}</h2>
+                </div>
+                <a class="bookmark-link" href="${bookmark.url}">Link</a>
+                <div class="bookmark-description">
+                    <p class="description">${bookmark.desc}</p>
+                </div>
+                <span class="rating">${bookmark.rating} stars</span>
+                <button name="delete-link">delete</button>
             </div>
-            <a class="bookmark-link" href="${bookmark.url}">Link</a>
-            <div class="bookmark-description">
-                <p class="description">${bookmark.desc}</p>
+            `;
+        } else {
+            // this creates and returns html for one condensed bookmark
+            return `
+            <div class="bookmark" id="${bookmark.id}">
+                <div class="bookmark-title">
+                    <h2 class="bookmark-name">${bookmark.title}</h2>
+                </div>
+                <a class="bookmark-link" href="${bookmark.url}">Link</a>
+                <span class="rating">${bookmark.rating} stars</span>
             </div>
-            <p class="rating">${bookmark.rating}</p>
-            <button name="delete-link">delete</button>
-        </div>
-        `;
+            `;
+        }
     }
 
 
@@ -53,13 +60,39 @@ const listMaker = (function(){
     };
 
     function displayAddField () {
-        $('.container').html(`<h1>this is where you add a bookmark</h1>`);
+        $('.container').html(
+        `
+        <section class="inputForm">
+        <form>
+            <fieldset>
+            <div class="bookmark">
+                <label for="link title">Title of this bookmark</label>
+                    <input type="text" name="link title" id="title" placeholder="memorable title" />
+            </div>
+            <div class="bookmark-title">
+                <label for="link description">Brief description of the site</label>
+                    <textarea  name="link description" id="description" placeholder="This site had a complete how-to build a fort." />
+            </div>
+            <div class="bookmark-link">
+                <label for="link url">the url</label><br/>
+                    <input type="url" name="link url" id="url" placeholder="http://...." /><br/>
+            </div>
+                <label for="filter-results">Rate its goodness</label> 
+                    <select id = "filter-results">
+                        <option value = "0">none</option>
+                        <option value = "1">one</option>
+                        <option value = "2">two</option>
+                        <option value = "3">three</option>
+                        <option value = "4">four</option>
+                        <option value = "5">five</option>
+                    </select>
+            </fieldset>
+            <button type="submit">submit</button>
+        </form>
+        </section>
+        `
+        );
     };
-/*
-    function addBookmark(bookmark) {
-        console.log('addBookmark ran');
-    }
-*/
 
     // this puts the bookmark elements on the page
     function mainRender () {
@@ -75,6 +108,7 @@ const listMaker = (function(){
      
         if (store.isAdding === true) {
             displayAddField();
+
         } else {
         const bookmarksString = generateBookmarkString();
         $('.container').html(bookmarksString);

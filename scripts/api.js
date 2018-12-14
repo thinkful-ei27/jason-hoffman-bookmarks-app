@@ -2,19 +2,18 @@
 
 const api = (function(callback) {
     console.log('api ran');
-    const BASE_URL = 'https://thinkful-list-api.herokuapp.com/jason/bookmarks';
+    const BASE_URL = 'https://thinkful-list-api.herokuapp.com/jason/bookmarks/';
 
     const getBookmarks = (function(callback) {
         console.log('getBookmarks ran');
         $.getJSON(BASE_URL, (callback));
     });
 
-    const deleteItem = function(id, onSuccess, onError) {
+    const deleteItem = function(id, callback) {
         $.ajax({
-          url: BASE_URL,
+          url: BASE_URL + IDBCursor,
           method: 'DELETE',
-          success: onSuccess,
-          error: onError,
+          success: callback,
         });
       };
 

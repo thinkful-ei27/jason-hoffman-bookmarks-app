@@ -10,9 +10,9 @@ const builder = (function() {
       }
 
     function handleDeleteClicked() {
-        console.log('handleDeleteClicked ran');
         $('.container').click('.delete-link', event => {
-          const id = getItemIdFromElement(event.currentTarget.parent);
+            console.log('handleDeleteClicked ran');
+            const id = getItemIdFromElement(event.currentTarget);
             console.log(id);
           api.deleteItem(id, () => {
             store.findAndDelete(id);
@@ -27,6 +27,13 @@ const builder = (function() {
             const val = $(event.currentTarget).val();
             store.setIsAdding();
             console.log(val);
+        });
+    }
+
+    function handleNewSubmit() {
+        $('.input-form').submit(event => {
+            event.preventDefault();
+            console.log(event.target).serializeArray();
         });
     }
 /*
@@ -56,6 +63,7 @@ function bindEventListeners() {
 
 return {
     bindEventListeners,
+    handleNewSubmit,
 };
 
 }());

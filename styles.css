@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    border-collapse: collapse;
 }
 
 body {
@@ -7,8 +8,8 @@ body {
     color: black;
 }
 
-.page-title {
-    width: 100%;
+.page-title, h1, div, .container {
+    justify-content: center;
     text-justify: center;
     margin-left: auto;
     margin-right: auto;
@@ -17,7 +18,6 @@ body {
 .header-bar {
     text-justify: center;
     justify-content: center;
-    width: 50%;
     box-sizing: content-box;
     background-color: #edecec;
     border: 2px solid gray;
@@ -27,58 +27,35 @@ body {
     margin-bottom: 40px;
 }
 
-h1 {
-    text-justify: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.container {
-    text-justify: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .bookmark {
-    display: flex;
-    width: 100%;
-    min-width: 500px;
+    max-width: 80%;
     margin-top: 10px;
     background-color: #edecec;
     border: 2px solid rgb(173, 170, 170);
-    border-radius: 10px;
-}
- .bookmark-title {
-    display: inline-block;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
     align-content: center;
-    max-width: 70%;
-    min-width: 300px;
-}
-.bookmark-description {
-    display: inline-block;
-    align-content: center;
-    max-width: 70%;
-    min-width: 300px;
-}
-
-.bookmark-link, .rating {
-    display: inline-block;
-    align-content: center;
-
+    text-justify: center;
 }
 
 .bookmark-title, .bookmark-description, .bookmark-link, .rating, button, a, select {
     background-color: lightgrey;
     border: 1px solid gray;
-    border-radius: 10px;
+    border-radius: 5px;
     text-decoration: none;
     color: black;
     padding: 0px 10px;
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 10px;
+    align-content: center;
+    text-justify: center;
 }
 
 label {
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 10px;
 }
