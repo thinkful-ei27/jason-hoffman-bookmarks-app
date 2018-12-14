@@ -87,7 +87,7 @@ const listMaker = (function(){
                         <option value = "5">five</option>
                     </select>
             </fieldset>
-            <button type="submit">submit</button>
+            <button type="submit" id="form-submit">submit</button>
         </form>
         </section>
         `
@@ -113,6 +113,8 @@ const listMaker = (function(){
         const bookmarksString = generateBookmarkString();
         $('.container').html(bookmarksString);
         }
+
+        builder.bindEventListeners();
     };
 
     // exposed elements for this module

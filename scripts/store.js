@@ -15,6 +15,10 @@ const store = {
     ],
     isAdding: false,
 
+    updateIsExpanded: function(id) {
+        this.bookmarks.isExpanded = true;
+    },
+
     findAndDelete: function(id) {
         this.bookmarks = this.bookmarks.filter(item => item.id !== id);
       },

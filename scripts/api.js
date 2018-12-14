@@ -9,9 +9,15 @@ const api = (function(callback) {
         $.getJSON(BASE_URL, (callback));
     });
 
+    const expandView = function(id, callback) {
+        $.ajax({
+
+        });
+    }
+
     const deleteItem = function(id, callback) {
         $.ajax({
-          url: BASE_URL + IDBCursor,
+          url: BASE_URL + id,
           method: 'DELETE',
           success: callback,
         });

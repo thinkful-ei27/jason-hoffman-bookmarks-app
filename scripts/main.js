@@ -9,11 +9,21 @@ const builder = (function() {
           .data('id');
       }
 
+    function handleExpandView() {
+        $('.bookmark').on('click', '.bookmark-title' , event => {
+            const id = getItemIdFromElement(event.target);
+            api.expandView(id, () => {
+                store.updateIsExpanded(id);
+                mainRender();
+            });
+        });
+    }
+
     function handleDeleteClicked() {
         $('.container').click('.delete-link', event => {
             console.log('handleDeleteClicked ran');
-            const id = getItemIdFromElement(event.currentTarget);
-            console.log(id);
+            const id = getItemIdFromElement(event.target);
+            console.log(id).val();
           api.deleteItem(id, () => {
             store.findAndDelete(id);
             mainRender();
@@ -22,19 +32,23 @@ const builder = (function() {
       }
 
     function handleAddBookmark() {
-        $('.header-bar').click('.add-bookmark', event => {
+        $('.header-bar').click('#add-bookmark', event => {
             console.log('handleAddBookmark ran');
-            const val = $(event.currentTarget).val();
             store.setIsAdding();
-            console.log(val);
         });
     }
 
     function handleNewSubmit() {
-        $('.input-form').submit(event => {
+        $('.input-form').on('submit', '#form-submit', 'event.data', event => {
             event.preventDefault();
-            console.log(event.target).serializeArray();
+
+            const bookmarkToAdd = (event.data).serializeArray();
+            api.createBookmarks(bookmarkToAdd, () => {
+                api.getBookmarks((bookmarks) => {
+                  console.log(bookmarks);
+                });
         });
+    });
     }
 /*
     const tempObjForTest = (
@@ -48,17 +62,15 @@ const builder = (function() {
         }
     );
     
-    api.createBookmarks(tempObjForTest, () => {
-        api.getBookmarks((bookmarks) => {
-          console.log(bookmarks);
-        });
-    });
+
     
 */
 function bindEventListeners() {
     console.log('bindListeners ran');
     handleAddBookmark();
     handleDeleteClicked();
+    handleNewSubmit();
+    handleExpandView();
 }
 
 return {
