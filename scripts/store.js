@@ -24,7 +24,9 @@ const store = {
     },
 
     setIsAdding: function() {
-        console.log('setIsAdding ran');
+        this.isAdding = true;
+        console.log(`setIsAdding ran, value is ${store.isAdding}`);
+        listMaker.mainRender();
     },
 };
 

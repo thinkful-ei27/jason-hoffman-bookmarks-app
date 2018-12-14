@@ -51,6 +51,10 @@ const listMaker = (function(){
         console.log(bookmarks);
         return bookmarks.join('');
     };
+
+    function displayAddField () {
+        $('.container').html(`<h1>this is where you add a bookmark</h1>`);
+    };
 /*
     function addBookmark(bookmark) {
         console.log('addBookmark ran');
@@ -69,9 +73,12 @@ const listMaker = (function(){
  
         console.log('mainRender ran');
      
+        if (store.isAdding === true) {
+            displayAddField();
+        } else {
         const bookmarksString = generateBookmarkString();
         $('.container').html(bookmarksString);
-      
+        }
     };
 
     // exposed elements for this module
