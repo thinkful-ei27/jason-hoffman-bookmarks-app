@@ -1,3 +1,5 @@
+/*global store listMaker main api*/
+
 console.log('index.js ran');
 
 $(function() {
@@ -9,5 +11,5 @@ $(function() {
     });
 
     builder.bindEventListeners();
-      });
+});
 

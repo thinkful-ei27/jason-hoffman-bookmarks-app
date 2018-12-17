@@ -1,4 +1,4 @@
-
+/*global store listMaker main api*/
 
 const api = (function(callback) {
     console.log('api ran');
@@ -13,7 +13,7 @@ const api = (function(callback) {
         $.ajax({
 
         });
-    }
+    };
 
     const deleteItem = function(id, callback) {
         $.ajax({

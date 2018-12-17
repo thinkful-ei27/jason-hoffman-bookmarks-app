@@ -2,7 +2,7 @@ console.log('store.js ran');
 
 const store = {
     bookmarks: [ 
-        /*
+       
         {
             id: 'id',
             title: 'name',
@@ -10,8 +10,25 @@ const store = {
             desc: 'blurb',
             rating: 'rating',
             isExpanded: false,
-        }
-        */
+        },
+        
+        {
+            id: 'id',
+            title: 'name',
+            url: 'link',
+            desc: 'blurb',
+            rating: 'rating',
+            isExpanded: false,
+        },
+        {
+            id: 'id',
+            title: 'name',
+            url: 'link',
+            desc: 'blurb',
+            rating: 'rating',
+            isExpanded: false,
+        },
+       
     ],
     isAdding: false,
 

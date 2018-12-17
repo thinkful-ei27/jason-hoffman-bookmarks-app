@@ -115,7 +115,7 @@ const listMaker = (function(){
         }
 
         builder.bindEventListeners();
-    };
+    }
 
     // exposed elements for this module
 
