@@ -1,8 +1,8 @@
 console.log('store.js ran');
 
-const store = {
-    bookmarks: [ 
-        /*
+const store = (function() {
+    const bookmarks = [ 
+        
         {
             id: 'id',
             title: 'name',
@@ -10,27 +10,32 @@ const store = {
             desc: 'blurb',
             rating: 'rating',
             isExpanded: false,
-        }
-        */
-    ],
-    isAdding: false,
+        },
+      
+    ];
+    const isAdding= false;
 
-    updateIsExpanded: function(id) {
+    const updateIsExpanded = function(id) {
         this.bookmarks.isExpanded = true;
-    },
+    };
 
-    findAndDelete: function(id) {
+    const findAndDelete = function(id) {
         this.bookmarks = this.bookmarks.filter(item => item.id !== id);
-      },
+      };
 
-    addBookmark: function(bookmark) {
+    const addBookmark = function(bookmark) {
         this.bookmarks.push(bookmark);
-    },
+    };
 
-    setIsAdding: function() {
+    const setIsAdding= function() {
         this.isAdding = true;
         console.log(`setIsAdding ran, value is ${store.isAdding}`);
         listMaker.mainRender();
-    },
-};
+    };
+
+    return {
+        bookmarks,
+        setIsAdding,
+    };
+}());
 
