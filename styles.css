@@ -4,9 +4,18 @@
 }
 
 body {
+
+	width: 100%;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
     background-color: white;
     color: black;
 }
+
+
+header {
+	text-align: center;
+}
+
 
 .page-title, h1, div, .container {
     justify-content: center;
