@@ -1,23 +1,25 @@
+/*global store listMaker main api $*/
+
 console.log('store.js ran');
 
-const store = {
-    bookmarks: [ 
+const store = (function() {
+    const bookmarks = [ 
        
         {
-            id: 'id',
-            title: 'name',
-            url: 'link',
-            desc: 'blurb',
-            rating: 'rating',
-            isExpanded: false,
+            id: 'cyols',
+            title: 'zoombah',
+            url: 'www.zoombah.com',
+            desc: 'the whole collection',
+            rating: 'three',
+            isExpanded: true,
         },
         
         {
-            id: 'id',
-            title: 'name',
-            url: 'link',
-            desc: 'blurb',
-            rating: 'rating',
+            id: 'aghgd',
+            title: 'publikwerks',
+            url: 'www.publikwerks.com',
+            desc: 'website of a cool artist',
+            rating: 'five',
             isExpanded: false,
         },
         {
@@ -29,25 +31,31 @@ const store = {
             isExpanded: false,
         },
        
-    ],
-    isAdding: false,
+    ];
 
-    updateIsExpanded: function(id) {
+    const isAdding = false;
+
+    const updateIsExpanded = function(id) {
         this.bookmarks.isExpanded = true;
-    },
+    };
 
-    findAndDelete: function(id) {
+    const findAndDelete = function(id) {
         this.bookmarks = this.bookmarks.filter(item => item.id !== id);
-      },
+      };
 
-    addBookmark: function(bookmark) {
+    const addBookmark=  function(bookmark) {
         this.bookmarks.push(bookmark);
-    },
+    };
 
-    setIsAdding: function() {
+    const setIsAdding = function() {
         this.isAdding = true;
         console.log(`setIsAdding ran, value is ${store.isAdding}`);
         listMaker.mainRender();
-    },
-};
+    };
+
+    return {
+        isAdding,
+        bookmarks,
+    };
+}());
 

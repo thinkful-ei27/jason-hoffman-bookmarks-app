@@ -1,4 +1,4 @@
-/* global store, api, $ */
+/*global store listMaker main api $*/
 'use-strict';
 console.log('main.js ran');
 
@@ -96,14 +96,14 @@ const listMaker = (function(){
 
     // this puts the bookmark elements on the page
     function mainRender () {
-       
+      /* 
         if (store.error) {
             const el = errorHandler(store.error);
             $('.error-container').html(el);
         } else {
             $('error.container').empty();
         }
- 
+        */
         console.log('mainRender ran');
      
         if (store.isAdding === true) {

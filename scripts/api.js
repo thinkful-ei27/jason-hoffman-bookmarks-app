@@ -1,4 +1,4 @@
-/*global store listMaker main api*/
+/*global store listMaker main api $*/
 
 const api = (function(callback) {
     console.log('api ran');
