@@ -5,7 +5,7 @@
 $(document).ready(function () {
   store;
   console.log('index.js ran');
-  
+
   api.getBookmarks((items) => {
 	items.forEach((item) => store.addBookmark(item));
 	
